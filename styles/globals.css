@@ -4,6 +4,7 @@
 html,
 body {
   background: #01002D;
+  /* background: url('/'); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

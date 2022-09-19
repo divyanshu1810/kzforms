@@ -22,21 +22,35 @@ function Form() {
     }
 
     function validGithub(String:string){
-        
+        let url;
+        try {
+        url = new URL(String);
+        } catch (_) {
+            return false;  
+        }
+         return url.protocol === "http:" || url.protocol === "https:";
     }
     function validRegister(String:string){
-        
+        const initial = String.substring(0,2);
+        const rest = String.substring(2);
+        if(initial=='RA' && String.length==15 && (rest.match(/^\d{13}$/)))
+        {
+            return true;
+        }
+        return false;
     }
     function validEmail(String:string){
-        
+       return (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(String))
     }
     function validName(String:string){
-        return true;
+        const regName = /^[a-zA-Z]+ [a-zA-Z]+$/;
+        const name = String;
+        return regName.test(name)
     }
     
     function handleSubmit(event:any){
         event.preventDefault()
-        if(validName(formData.name))
+        if(validName(formData.name) && validGithub(formData.github) && validEmail(formData.email) && validRegister(formData.registration))
         {
             console.log(formData)
         }

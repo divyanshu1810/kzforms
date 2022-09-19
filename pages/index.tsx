@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import Form from '../Components/Form'
+import Form from '../components/Form'
 const Home: NextPage = () => {
   return (
     <div className='flex justify-center mt-52'>
