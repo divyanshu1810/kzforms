@@ -1,5 +1,5 @@
 import React from 'react'
-
+import axios from 'axios';
 function Form() {
     const [formData, setFormData] = React.useState(
         {
@@ -52,7 +52,18 @@ function Form() {
         event.preventDefault()
         if(validName(formData.name) && validGithub(formData.github) && validEmail(formData.email) && validRegister(formData.registration))
         {
-            console.log(formData)
+            axios.post('https://www.formbackend.com/f/dbc0079a77804806', {
+                registration: formData.registration,
+                github: formData.github,
+                email: formData.email,
+                name: formData.name,
+              })
+              .then(function (response) {
+                console.log(formData);
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
         }
     }
     
