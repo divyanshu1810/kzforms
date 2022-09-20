@@ -2,26 +2,15 @@ import React from 'react'
 import axios from 'axios';
 function Form() {
     const [valid,setValid] = React.useState(false);
+    const [formError,setFormError] = React.useState('')
     const [formData, setFormData] = React.useState(
         {
             registration:"",
             email:"",
             github:"",
             name:""
-        }
-            
-    )
-    function handleChange(event:any){
-        const {name,value} = event.target
-        event.persist();
-        setFormData(prevFormData => {
-            return {
-                ...prevFormData,
-                [name]:value
-            }
-        })
-    }
-
+        }      
+    ) 
     function validGithub(String:string){
         let url;
         try {
@@ -48,7 +37,16 @@ function Form() {
         const name = String;
         return regName.test(name)
     }
-    
+    function handleChange(event:any){
+        const {name,value} = event.target
+        event.persist();
+        setFormData(prevFormData => {
+            return {
+                ...prevFormData,
+                [name]:value
+            }
+        })
+    }
     function handleSubmit(event:any){
         event.preventDefault()
         if(validName(formData.name) && validGithub(formData.github) && validEmail(formData.email) && validRegister(formData.registration))
@@ -66,6 +64,26 @@ function Form() {
             .catch(function (error) {
                 console.log(error);
             });
+        }
+        else{
+            if(formData.name.length==0 || formData.github.length==0 || formData.email.length==0 || formData.registration.length==0)
+            {
+                setFormError('Please fill all the details properly')
+            }
+            else if(!validEmail(formData.email))
+            {
+                setFormError('Please enter a valid email address')
+            }
+            else if(!validName(formData.name))
+            {
+                setFormError('Please enter a valid name')
+            }else if(!validRegister(formData.registration))
+            {
+                setFormError('Please enter a valid Registration Number')
+            }else if(!validGithub(formData.github))
+            {
+                setFormError('Please enter a valid Github')
+            }
         }
     }
     
@@ -105,8 +123,8 @@ function Form() {
             name="name"   
             value={formData.name} 
             />
-                
-            <input className='mt-16 bg-blue-900 p-2 w-4/6 hover:bg-blue-600 text-center duration-150 cursor-pointer text-white rounded-full ' 
+            {formError && <div className='mt-6 -mb-4 duration-150 text-white font-bold bg-red-600 rounded-md p-2'>{formError}</div>}
+            <input className='mt-10 bg-blue-900 p-2 w-4/6 hover:bg-blue-600 text-center duration-150 cursor-pointer text-white rounded-full ' 
             type="submit" 
             value="Send Information">
             </input>
