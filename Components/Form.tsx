@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios';
 function Form() {
+    const [valid,setValid] = React.useState(false);
     const [formData, setFormData] = React.useState(
         {
             registration:"",
@@ -59,16 +60,18 @@ function Form() {
                 name: formData.name,
               })
               .then(function (response) {
-                console.log(formData);
-              })
-              .catch(function (error) {
+                console.table(formData);
+                setValid(!valid);
+            })
+            .catch(function (error) {
                 console.log(error);
-              });
+            });
         }
     }
     
     return(
-        <div className='lg:w-1/4 md:w-2/4 md:h-96 items-center w-auto p-4 py-4 rounded-lg shadow-xl bg-white bg-opacity-20 backdrop-blur-lg drop-shadow-lg'>
+        <>
+        {!valid && <div className='lg:w-1/4 md:w-2/4 md:h-96 items-center w-auto p-4 py-4 rounded-lg shadow-xl bg-white bg-opacity-20 backdrop-blur-lg drop-shadow-lg'>
             <form name='myForm' onSubmit={handleSubmit} id="myForm" className="flex flex-col md:pt-10 items-center">
             <input 
             className='p-2 rounded-full lg:w-5/6 font-semibold text-center'
@@ -108,7 +111,17 @@ function Form() {
             value="Send Information">
             </input>
         </form>
-        </div>
+        </div>}
+        {valid && <div className='lg:w-1/4 mx-8 md:w-2/4 h-auto items-center w-auto p-4 py-4 rounded-lg shadow-xl bg-white bg-opacity-20 backdrop-blur-lg drop-shadow-lg'>
+        <div className=' text-white text-2xl text-center'>You have Succesfully Submitted the Form !🥳🪄</div>        
+            <div className='text-center md:text-lg md:mt-14 mt-8 text-sm text-white'>
+                <div>Name : {formData.name}</div>        
+                <div>Registration Number : {formData.registration}</div>        
+                <div>Email ID : {formData.email}</div>        
+                <div>Github : {formData.github}</div>
+            </div>        
+        </div>}
+        </>
     )
   
 }
