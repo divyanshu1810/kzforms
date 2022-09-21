@@ -34,3 +34,13 @@ a {
      
   }
 }
+@media only screen and (max-width: 280px) {
+  .fold{
+    margin-top: -50px;
+    margin-left: 12px;
+    margin-right: 12px;
+  }     
+  
+
+}
+

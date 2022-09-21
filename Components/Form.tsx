@@ -89,12 +89,14 @@ function Form() {
     
     return(
         <>
-        {!valid && <div className='lg:w-1/4 md:w-2/4 md:h-auto items-center bg-white w-auto p-4 py-4 rounded-xl shadow-xl '>
-            <div className='text-2xl font-semibold text-center md:pt-4 md:pb-10 text-gray-600'>Tell us about Yourself lad!</div>
+        {!valid && <div className='lg:w-1/4 md:w-2/4 fold md:h-auto items-center bg-white w-auto p-4 py-4 rounded-xl shadow-xl '>
+            <div className='flex justify-center mx-4 mb-4  md:mb-0'>
+            <div className='text-xl font-semibold w-5/6 text-center md:pt-4 md:pb-10 text-gray-600'>Tell us about Yourself lad! 🥰</div>
+            </div>
         {/* bg-white bg-opacity-20 backdrop-blur-lg drop-shadow-lg */}
             <form name='myForm' onSubmit={handleSubmit} id="myForm" className=" flex flex-col  items-center">
             <input 
-            className='p-2 lg:w-5/6 font-semibold text-left opacity-100 border-b-2 hover:border-blue-500'
+            className='p-2 lg:w-5/6 font-semibold outline-none text-left opacity-100 border-b-2 hover:border-blue-500'
             type="text"
             placeholder="Registration Number"
             onChange={handleChange}
@@ -103,7 +105,7 @@ function Form() {
             />
             <input 
             type="email"
-            className='p-2 lg:w-5/6 font-semibold text-left mt-4 opacity-100 border-b-2 hover:border-blue-500'
+            className='p-2 lg:w-5/6 outline-none font-semibold text-left mt-4 opacity-100 border-b-2 hover:border-blue-500'
             placeholder="SRMIST email ID"
             onChange={handleChange}
             name="email"
@@ -111,7 +113,7 @@ function Form() {
             />
             <input 
             type="text"
-            className='p-2 lg:w-5/6 font-semibold text-left mt-4 opacity-100 border-b-2 hover:border-blue-500'
+            className='p-2 lg:w-5/6 outline-none font-semibold text-left mt-4 opacity-100 border-b-2 hover:border-blue-500'
             placeholder="Github"
             onChange={handleChange}
             name="github"   
@@ -119,13 +121,13 @@ function Form() {
             />
             <input 
             type="text"
-            className='p-2 lg:w-5/6 font-semibold text-left mt-4 opacity-100 border-b-2 hover:border-blue-500'
+            className='p-2 lg:w-5/6 outline-none font-semibold text-left mt-4 opacity-100 border-b-2 hover:border-blue-500'
             placeholder="Name"
             onChange={handleChange}
             name="name"   
             value={formData.name} 
             />
-            {formError && <div className='mt-6 -mb-4 duration-150 bg-opacity-80 backdrop-blur-lg drop-shadow-lg text-white rounded-lg bg-red-600 font-bold px-4 py-1'>{formError}</div>}
+            {formError && <div className='mt-6 -mb-4  text-gray-600 border-b-2 border-red-600 pb-2 font-bold px-4 py-1'>Error : {formError}</div>}
             <input className='mt-10 bg-blue-900 p-2 w-4/6 mb-6 hover:bg-blue-600 text-center duration-150 cursor-pointer text-white rounded-lg ' 
             type="submit" 
             value="Send Information">
