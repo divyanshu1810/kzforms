@@ -33,7 +33,7 @@ function Form() {
        return (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(String))
     }
     function validName(String:string){
-        const regName = /^[a-zA-Z]+ [a-zA-Z]+$/;
+        const regName = /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u;
         const name = String;
         return regName.test(name)
     }
@@ -51,7 +51,7 @@ function Form() {
         event.preventDefault()
         if(validName(formData.name) && validGithub(formData.github) && validEmail(formData.email) && validRegister(formData.registration))
         {
-            axios.post('https://www.formbackend.com/f/dbc0079a77804806', {
+            axios.post(`${process.env.NEXT_PUBLIC_URL}`, {
                 registration: formData.registration,
                 github: formData.github,
                 email: formData.email,
@@ -123,16 +123,16 @@ function Form() {
             name="name"   
             value={formData.name} 
             />
-            {formError && <div className='mt-6 -mb-4 duration-150 text-white font-bold bg-red-600 rounded-md p-2'>{formError}</div>}
+            {formError && <div className='mt-6 -mb-4 duration-150 bg-opacity-80 backdrop-blur-lg drop-shadow-lg text-white rounded-full bg-red-600 font-bold px-4 py-1'>{formError}</div>}
             <input className='mt-10 bg-blue-900 p-2 w-4/6 hover:bg-blue-600 text-center duration-150 cursor-pointer text-white rounded-full ' 
             type="submit" 
             value="Send Information">
             </input>
         </form>
         </div>}
-        {valid && <div className='lg:w-1/4 mx-8 md:w-2/4 h-auto items-center w-auto p-4 py-4 rounded-lg shadow-xl bg-white bg-opacity-20 backdrop-blur-lg drop-shadow-lg'>
-        <div className=' text-white text-2xl text-center'>You have Succesfully Submitted the Form !🥳🪄</div>        
-            <div className='text-center md:text-lg md:mt-14 mt-8 text-sm text-white'>
+        {valid && <div className='lg:w-1/4 mx-8 md:w-2/4 h-auto items-center w-auto p-4 pt-4 rounded-lg shadow-xl bg-white bg-opacity-20 backdrop-blur-lg drop-shadow-lg'>
+        <div className=' text-white text-2xl font-mono font-semibold text-center'>You have Succesfully Submitted the Form !🥳🪄</div>        
+            <div className='text-center md:text-lg mt-8 text-sm text-white'>
                 <div>Name : {formData.name}</div>        
                 <div>Registration Number : {formData.registration}</div>        
                 <div>Email ID : {formData.email}</div>        
