@@ -1,5 +1,6 @@
 # kzForms
 A form that accepts User Details, checks for errors, logs the data to the console, POST the data to a dummy API and gives confirmation, Built using Next Js, TypeScript and Tailwind CSS.
+### Deployed Link : https://kzforms.vercel.app/
 # Desktop View 
 ![image](https://user-images.githubusercontent.com/91051053/192035019-9de0406d-e1d8-47f1-917d-34b01ca2fe11.png)
 # Mobile View
