@@ -113,7 +113,7 @@ function Form() {
     
     return(
         <>
-        {!valid && <div className='lg:w-1/4 md:w-2/4 fold md:h-auto items-center bg-white w-auto py-4 rounded-xl shadow-xl '>
+        {!valid && <div className='lg:w-1/4 md:w-2/4 fold md:h-auto items-center w-auto mx-4 bg-white py-4 rounded-xl shadow-xl '>
             <div className='flex justify-center mx-4 md:mb-4 '>
             <div className='text-xl font-semibold w-5/6 text-center  md:pt-4 border-blue-500 border-b-2 text-gray-600 pad'>Tell us about Yourself lad! 🥰</div>
             </div>
@@ -145,13 +145,13 @@ function Form() {
             />
             <input 
             type="text"
-            className='p-2 lg:w-5/6 outline-none font-semibold text-left mt-4 opacity-100 border-b-2 hover:border-blue-500'
+            className='p-2 lg:w-5/6 outline-none duration-150 font-semibold text-left mt-4 opacity-100 border-b-2 hover:border-blue-500'
             placeholder="Name"
             onChange={handleChange}
             name="name"   
             value={formData.name} 
             />
-            {formError && <div className='mt-6 -mb-4  text-gray-600 border-b-4 border-red-600 pb-2 font-bold px-4 py-1'>Error : {formError}</div>}
+            {formError && <div className='mt-6 -mb-4 w-72  text-gray-600 border-b-4 border-red-600 pb-2 font-bold px-4 py-1'>Error : {formError}</div>}
             <input className='mt-10 bg-blue-900 p-2 w-4/6 mb-6 hover:bg-blue-600 text-center duration-150 cursor-pointer text-white rounded-lg ' 
             type="submit" 
             value="Submit">
