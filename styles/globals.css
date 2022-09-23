@@ -5,9 +5,9 @@ html,
 body {
   background: #01002D;
   /* background: url('/'); */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  /* background-position: center; */
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -28,6 +28,7 @@ a {
     color-scheme: dark
   } */
   body {
+    background-color: #01002D;
     /* color: black; */
     /* background: white; */
     /* background-repeat: no-repeat; */

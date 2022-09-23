@@ -113,7 +113,7 @@ function Form() {
     
     return(
         <>
-        {!valid && <div className='lg:w-1/4 md:w-2/4 fold md:h-auto items-center bg-white w-auto p-4 py-4 rounded-xl shadow-xl '>
+        {!valid && <div className='lg:w-1/4 md:w-2/4 fold md:h-auto items-center bg-white w-auto py-4 rounded-xl shadow-xl '>
             <div className='flex justify-center mx-4 md:mb-4 '>
             <div className='text-xl font-semibold w-5/6 text-center  md:pt-4 border-blue-500 border-b-2 text-gray-600 pad'>Tell us about Yourself lad! 🥰</div>
             </div>
