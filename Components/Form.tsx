@@ -120,7 +120,7 @@ function Form() {
         {/* bg-white bg-opacity-20 backdrop-blur-lg drop-shadow-lg */}
             <form name='myForm' onSubmit={handleSubmit} id="myForm" className=" flex flex-col  items-center">
             <input 
-            className='p-2 lg:w-5/6 font-semibold outline-none text-left opacity-100 border-b-2 hover:border-blue-500'
+            className='p-2 lg:w-5/6 font-semibold outline-none mt-2 text-left opacity-100 border-b-2 hover:border-blue-500'
             type="text"
             placeholder="Registration Number"
             onChange={handleChange}
