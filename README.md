@@ -1,34 +1,12 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# kzForms
+A form that accepts User Details, logs the data to the console, POST the data to a dummy API and gives confirmation, Built using Next Js, TypeScript and Tailwind CSS.
+# Desktop View 
+![image](https://user-images.githubusercontent.com/91051053/192035019-9de0406d-e1d8-47f1-917d-34b01ca2fe11.png)
+# Mobile View
+![image](https://user-images.githubusercontent.com/91051053/192035110-0e29b594-51a5-4efd-a867-b12460484a50.png)
+# iPad View
+![image](https://user-images.githubusercontent.com/91051053/192035174-5e19c54f-4ac3-442c-a339-6b4e9e473471.png)
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+It logs the data on the console and gives the confirmation of the data entered by the user.
+note - don't forget to use your formbackend api in .env.local before running it on your local using yarn dev.
+![image](https://user-images.githubusercontent.com/91051053/192035720-c656b392-b047-4ea8-8876-11e61a3951fa.png)
